@@ -1,0 +1,32 @@
+OOPS:
+
+Class vars: Variables defined right after class declaration
+instance vars: variables defined inside constructor 
+
+Selenium:
+
+#base code to create web driver code
+driver: webdriver = webdriver.Chrome() --> to create web driver object for chrome
+driver.get("https://rahulshettyacademy.com/angularpractice/") --> to go to the specified url
+driver.maximize_window() --> maximize the window
+
+#locators are used to identify the input boxes on a web page
+#to get the locators info we can do inspect elements on the webpage
+#typical locators are NAME, ID , Xpath, CSSSelector, Classname, LinkText
+
+#below are the examples for locators based on NAME and ID attributes on html
+driver.find_element(By.NAME,"email").send_keys("bandiramprasad7@gmail.com")
+driver.find_element(By.ID,"exampleInputPassword1").send_keys("hello123")
+driver.find_element(By.ID,"exampleCheck1").click()
+
+#XPath syntax: //tagname[@attribute='value']
+#CSSSelector syntax: tagname[attribute='value']
+#below are the examples for locators based on the XPATH and CSSSelector
+driver.find_element(By.CSS_SELECTOR,"input[name='name']").clear()
+driver.find_element(By.CSS_SELECTOR,"input[name='name']").send_keys("Ram Prasad")
+driver.find_element(By.XPATH,"//input[@type='submit']").click()
+message = driver.find_element(By.CLASS_NAME,"alert-success").text
+
+#locator for dropdowns in the webpage. 2types of dropdown menus we have 1.static and 2. auto suggestive dropdown(dynamic drop down)
+
+#example for static dropdowns. here drop downs are fixed.. we need to use SELECT class
