@@ -50,7 +50,7 @@ wait.until(expected_conditions.visibility_of_element_located(upload_success_loca
 
 price_col_id = driver.find_element(By.XPATH,"//div[text()='Price']").get_attribute("data-column-id")
 #print(price)
-price =driver.find_element(By.XPATH,"//div[text()='"+fruit_name+"']/parent::div/parent::div/div[@id='cell-"+price_col_id+"-undefined']").text
+price =driver.find_element(By.XPATH,f"//div[text()='{fruit_name}']/parent::div/parent::div/div[@id='cell-{price_col_id}-undefined']").text
 
 print(price)
 assert price == new_price
